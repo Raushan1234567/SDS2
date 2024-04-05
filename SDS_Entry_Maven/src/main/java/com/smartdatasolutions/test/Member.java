@@ -12,7 +12,7 @@ public class Member {
 
 	
 	
-	public Member(String id, String address, String city, String firstName, String lastName, String state, String zip2) {
+	public Member() {
 	
 		this.id = id;
 		this.address = address;

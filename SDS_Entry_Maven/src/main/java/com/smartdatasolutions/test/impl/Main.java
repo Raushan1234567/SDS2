@@ -3,9 +3,10 @@ package com.smartdatasolutions.test.impl;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.Set;
 
 import com.smartdatasolutions.test.Member;
 import com.smartdatasolutions.test.MemberExporter;
@@ -28,7 +29,8 @@ public class Main extends MemberFileConverter {
 	    @Override
 	    protected List<Member> getNonDuplicateMembers(List<Member> membersFromFile) {
 	   
-	        return membersFromFile.stream().distinct().collect(Collectors.toList());
+	    	Set<Member> uniqueMembers = new HashSet<>(membersFromFile);
+	        return new ArrayList<>(uniqueMembers);
 	    }
 
 	    @Override
@@ -59,6 +61,7 @@ public class Main extends MemberFileConverter {
 	            String outputFilePath = "target/output"; 
 	            String outputFileName = "outputFile.csv"; 
 	            main.convert(inputMemberFile, outputFilePath, outputFileName);
+	            System.out.println("program started");
 	            
 	        } catch (Exception e) {
 	            e.printStackTrace();
