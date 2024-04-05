@@ -54,10 +54,7 @@ public abstract class MemberFileConverter {
 
 	private void writeMembers(File outputFile, MemberExporter exporter, List<Member> members) throws IOException {
 	  
-	    File outputDirectory = outputFile.getParentFile();
-	    if (!outputDirectory.exists() && !outputDirectory.mkdirs()) {
-	        throw new IOException("Unable to create output directory: " + outputDirectory.getAbsolutePath());
-	    }
+	  
 
 	    Writer writer = new FileWriter(outputFile, true);
 

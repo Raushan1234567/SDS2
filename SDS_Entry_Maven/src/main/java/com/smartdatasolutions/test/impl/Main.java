@@ -57,8 +57,8 @@ public class Main extends MemberFileConverter {
 	
 	        try {
 	            Main main = new Main();
-	            File inputMemberFile = new File(".\\Members.txt");
-	            String outputFilePath = "target/output"; 
+	            File inputMemberFile = new File("Members.txt");
+	            String outputFilePath = "Ans"; 
 	            String outputFileName = "outputFile.csv"; 
 	            main.convert(inputMemberFile, outputFilePath, outputFileName);
 	            System.out.println("program started");
